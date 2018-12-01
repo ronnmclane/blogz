@@ -1,24 +1,14 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
 {% block content %}
-<h1>Login</h1>
-  <form method="post">
-    <table>
-      <tr>
-        <td><label for="username">Username</label></td>
-        <td>
-          <input name="username" type="text" value="">
-          <span class="error">{{username_error}}</span>
-        </td>
-        </tr>
-      <tr>
-        <td><label for="password">Password</label></td>
-        <td>
-          <input name="password" type="password">
-          <span class="error">{{password_error}}</span>
-        </td>
-      </tr>
-    </table>
-    <input type="submit" value="Login">
-  </form>
-  <p>Need to Singup? <a href="/signup">Create A New Account</a></p>
+    <h1>Login</h1>
+    <p>If you don't have an account, <a href=/signup>register here!</a></p>
+    <form method="post">
+        <p><label for "username">Username</label>
+        <input id="username" name="username" type="text" value="{{username}}" /></p>
+        <p><label for "password">Password</label>
+        <input id="password" name="password" type="password"></p>
+        <input type="submit" value="Log In" />
+    </form>
+
 {% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>View all previous entries!</h1>
+<hr>
+{% if blogs|length == 0 %}
+    <p>No posts yet</p>
+    {% else %}
+    
+            {% for blog in blogs %}
+            <h2><a href="/blog?id={{blog.id}}">{{blog.title}}</a></h2>
+            <p>{{blog.body}}</p>
+            <p><a href="/blog?user={{blog.owner.id}}">By {{blog.owner.username}}</a></p>
+            <hr>
+            {% endfor %}
+
+{% endif %}
+
+{% endblock %}

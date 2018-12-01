@@ -1,14 +1,16 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
+<h1>View all previous entries!</h1>
 
-<h1>All Users</h1>
+{% if userlist|length == 0 %}
+    <p>No writers yet</p>
+    {% else %}
+    
+            {% for user in userlist %}
+            <h2><a href="/blog?user={{user.id}}">{{user.username}}</a></h2>
+            {% endfor %}
 
-{% for user in users %}
+{% endif %}
 
-  <ul>
-    <li><a href="/blog?user={{user.id}}">{{user.username}}</a></li>
-  </ul>
-
-{% endfor %}
 {% endblock %}
