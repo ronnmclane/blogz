@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Enter A New Post</h1>
+<form action ='/newpost' method = 'post'>
+    <table>
+        <tr>
+            <td>
+            <label>
+                Title Of Your Blog Post:</br>
+                <input type="text" name='title' value='{{title}}'/>
+                <p class="error">{{title_error}}</p>
+            </label>
+            </td>
+            <tr>
+                <td>
+                <label>
+                Enter A New Blog Post:</br>
+                <textarea name="body" rows="12" cols="75" value='{{body}}'></textarea>
+                <p class="error">{{body_error}}</p>
+                </label>
+               </td>
+            </tr>
+           <tr>
+               <td>
+                    <input type="submit" value='Add Post' />
+               </td>
+           </tr>
+        </table> 
+</form>
+
+{% endblock %}
