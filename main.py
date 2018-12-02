@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://bloggz:YES@localhost:8889/bloggz'
+
 app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
 #note for future: in actual web applications, secret keys should be kept secret, not included in github
