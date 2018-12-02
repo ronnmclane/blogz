@@ -7,7 +7,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://blogz:password@localhos
 app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
 #note for future: in actual web applications, secret keys should be kept secret, not included in github
-#app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 class Blog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
